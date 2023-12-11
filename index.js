@@ -38,3 +38,12 @@ function wrapInArray(obj) {
 }
 console.log(wrapInArray("Poop"));
 console.log(wrapInArray(["Pee", "Poo"]));
+// object is a string, because we declared it above as the variable part
+// var object = backpack.get();
+// since backpack is a string, cant pass num to add function
+// backpack.add("Pencil");
+function logPoint(p) {
+    console.log("".concat(p.x, ", ").concat(p.y));
+}
+var point = { x: 12, y: 26 };
+logPoint(point);
