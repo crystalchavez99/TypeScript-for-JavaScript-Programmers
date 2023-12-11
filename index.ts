@@ -60,3 +60,24 @@ function wrapInArray(obj: string | string[]){
 
 console.log(wrapInArray("Poop"))
 console.log(wrapInArray(["Pee", "Poo"]))
+
+// Generics provide variables to type
+// Arrays without generics could contain anything, with one can describe va,ues inside
+type StringArray = Array<String>;
+type NumberArray = Array<Number>;
+type ObjectWithNameArray = Array<{name: string} >;
+
+// can declare own types that use generics
+interface Backpack<Type>{
+    add: (obj:Type) => void;
+    get: () => Type;
+}
+
+// tells TS there is const called backpack and not worry where it came from
+declare const backpack: Backpack<string>;
+
+// object is a string, because we declared it above as the variable part
+const object = backpack.get();
+
+// since backpack is a string, cant pass num to add function
+backpack.add("Pencil");
