@@ -48,3 +48,15 @@ type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 function getLength(obj: string | string[]){
     return obj.length;
 }
+
+// typeof 
+// can make function return different value based on type passed in
+function wrapInArray(obj: string | string[]){
+    if(typeof obj === "string"){
+        return [obj];
+    }
+    return obj;
+}
+
+console.log(wrapInArray("Poop"))
+console.log(wrapInArray(["Pee", "Poo"]))
